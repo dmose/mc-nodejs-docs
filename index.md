@@ -96,12 +96,32 @@ While not fixed requirements these are a list of things to consider when choosin
 * Any general opinions of the module found in the Node community.
 
 ### Automated tools
-A set of automated systems will be employed to verify that all vendored modules continue to meet the policy.
-mach lint node: Primarily intended for CI, runs checks that no modules or dependencies use a disallowed license or have known security vulnerabilities. Verifies that package-lock.json is valid (does not pull code from unexpected registries).
-[Aside:  For security vulnerabilities this will rely on npm audit since snyk requires an account and we shouldn’t expect developers to need to sign up to run basic checks.]
-Automated jobs run on treeherder for new phabricator revisions that affect node files and run periodically to verify existing modules.
-[Aside:  This will include the tests from the above lint checks as well as using snyk (which means there will have to be an account that our CI can use).]
-mach vendor node: Adds a new module to the devDependencies of package.json and validates it and its dependency tree as above.
+A set of automated systems will be employed to verify that all vendored modules
+continue to meet the policy.
 
-Herald rule to automatically add nodejs-peers as a blocking reviewer to any revisions that modify node_modules, package.json or package-lock.json.
+* `mach lint node`: Primarily intended for CI, runs checks that no modules or
+dependencies use a disallowed license or have known security vulnerabilities.
+Verifies that `package-lock.json` is valid (does not pull code from unexpected
+registries).
+
+    <details><summary>Details...</summary>
+
+    For security vulnerabilities this will rely on npm audit since snyk
+    requires an account and we shouldn’t expect developers to need to sign up to
+    run basic checks.
+    </details>
+
+* Automated jobs run on treeherder for new phabricator revisions that affect
+  node files and run periodically to verify existing modules.
+
+  <details><summary>Details...</summary>
+  This will include the tests from the above lint checks as well as using snyk
+  (which means there will have to be an account that our CI can use).
+  </details>
+
+* `mach vendor node`: Adds a new module to the `dependencies` or
+  `devDependencies` of `package.json` and validates it and its dependency tree
+  as above.
+
+* Herald rule to automatically add `nodejs-peers` as a blocking reviewer to any revisions that modify `node_modules`, `package.json` or `package-lock.json`.
 
