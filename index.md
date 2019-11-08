@@ -30,7 +30,7 @@ Current explicit non-goals of this policy include:
 
   * Builds work even when not connected to the network (i.e. in Continuous Integration).
   * Support build-team work towards fully-reproducible builds for security reasons
-  * Avoid developer debugging pain because we get deterministic node package versions for a given checkout without having to remember to `npm install`
+  * Avoid developer debugging pain because we get deterministic node package versions for a given checkout or branch without having to remember to `npm install`
   * Keep CI (and local, to some degree) build resource usage down by avoiding mandatory package install step.
 
 
