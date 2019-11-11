@@ -14,7 +14,7 @@ Current explicit non-goals of this policy include:
 * Full code review of all modules added to node_modules in mozilla-central.
 * Covering node usage in repositories outside of mozilla-central and the integration branches, even if they may be used to generate artifacts that eventually land in mozilla-central.
 
-### Policy
+### General Policy
 * Node modules may only be used at build time or before (e.g. automated scripts and linting tools).
 
   <details><summary>Details...</summary>
@@ -38,18 +38,33 @@ Current explicit non-goals of this policy include:
 
 
 * Introduction or updates of vendored modules require review by a nodejs peer.
+
+* Any introduction of modules including cryptographic code requires additional review from a cryptographic expert.
+
 * Any changes to the vendored node modules should be landed as a standalone changeset also containing any changes required to keep the tree building with an appropriate description describing the need and review results.
 
   <details><summary>Why...</summary>
   The intent here is to maintain a working tree across all related commits so that VCS bisect functionality continues to work.
   </details>
 
-* All vendored node modules (and the entire dependency tree) must be licensed
-  under acceptable licenses based on the [licensing
-  runbook](https://docs.google.com/document/d/1Oguqp43W4_ChyroJ9AJAzG1jSwkUWfKvBKVvrDxVsMg/comment).
-  [XXX check with mhoye to ensure this is ok to post publicly]
+### Package selection
 
-* Any introduction of modules including cryptographic code requires additional review from a cryptographic expert.
+All vendored node modules (and their entire dependency tree) must be licensed
+under acceptable licenses based on the [licensing
+runbook](https://docs.google.com/document/d/1Oguqp43W4_ChyroJ9AJAzG1jSwkUWfKvBKVvrDxVsMg/comment).
+[XXX check with mhoye to ensure this is ok to post publicly]
+
+While not fixed requirements these are a list of things to consider when
+choosing a module to vendor:
+
+* Size of module and dependency tree
+* Update frequency
+* Test coverage
+* Responsiveness to bugs and security vulnerabilities.
+* Random sample to evaluate likely code quality.
+* Does this inject any code into the final build or have any other inherent security risks?
+* Any general opinions of the module found in the Node community.
+
 * Modules including binary code will only be approved in special circumstances.
   <details><summary>Why...</summary>
   The primary intent here is to avoid the implementation complexity needed for multiple platform-specific binaries in the vendored tree.  This will be handled by having `mach vendor node` pass `--ignore-scripts` to `npm`.  Note that the failure modes of that switch are package-dependent, which could lead to unexpected build behaviors/failures.  We may wish to have the vendoring code and reviewer docs emit a message suggestion manually inspecting the ignore scripts to avoid this.
@@ -92,16 +107,6 @@ Current explicit non-goals of this policy include:
   one per line, with “dep:” at the beginning of such lines.  Other schemes
   could be considered.
   </details>
-
-### Package selection
-While not fixed requirements these are a list of things to consider when choosing a module to vendor:
-* Size of module and dependency tree
-* Update frequency
-* Test coverage
-* Responsiveness to bugs and security vulnerabilities.
-* Random sample to evaluate likely code quality.
-* Does this inject any code into the final build or have any other inherent security risks?
-* Any general opinions of the module found in the Node community.
 
 See also https://blog.tidelift.com/how-to-choose-open-source-packages-well for
 more thoughts on this.
