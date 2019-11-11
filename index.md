@@ -106,6 +106,9 @@ While not fixed requirements these are a list of things to consider when choosin
 * Does this inject any code into the final build or have any other inherent security risks?
 * Any general opinions of the module found in the Node community.
 
+See also https://blog.tidelift.com/how-to-choose-open-source-packages-well for
+more thoughts on this.
+
 ### Automated tools
 A set of automated systems will be employed to verify that all vendored modules
 continue to meet the policy.
