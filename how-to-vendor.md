@@ -6,24 +6,35 @@
   choosing and landing this package.
 2. Review available packages with functionality you want, keeping in mind the
   guideliness in the [Package Selection section of the main policy
-  doc](./index#package-selection)
-3. Work with your reviewer to select a package that meets each requirement in
-   the [Policy Section of the main policy doc](./index#policy), or that the
-   reviewer agrees should be given an exception to.
-  - XXX security steps -- fill in after we get general agreement on the policies
-4. Reach out to a NodeJS module reviewer and request approval to vendor this package
-5. Use something like this command to install (eventually `mach vendor node` will do these steps):
-- npm install --save-exact --save-dev|---save|--save-optional --no-bin-links
-  --no-optional package@version --ignore-scripts
-- Commit as per license section (XXX pending sheriff approval)
+  doc](./index#package-selection).
+3. Work with your reviewer to select a package to select the best package
+4. Use `mach vendor node install` to vendor in the package (this will handle
+   installing with the correct `npm` options and validating security and
+   license invariants).
+   <details><summary>Details</summary>
+
+    To be implemented in `mach vendor node install`:
+     * ```npm install --save-exact --save-dev|---save|--save-optional --no-bin-links --no-optional package@version --ignore-scripts```
+     * run `mach node lint`, which will:
+       * run a license linter locally (until implemented, see http://npm.broofa.com/)
+       * run `npm audit`
+       * run `lockfile-lint`
+
+   </details>
+5. Review the generated patch to be sure it looks like you would expect.
+6. Commit as per the General Policy section.
+7. Upload your patch to Phabrictor and request review.
 
 ### Updating an existing package
 
-- (XXX security audit steps)
-- (XXX license audit steps)
-- (XXX own build-system audit steps)
-- Commit as per license section (XXX pending sheriff approval)
+1. Use `mach vendor node install` to vendor in the new version of the
+   package and validate the usual invariants.
+2. Check whether any APIs have changed, and adjust the minimal amount of code
+   necessary to keep the builds running and tests passing.  File follow-up bugs
+   for any other changes you want to make.
+3. Execute steps 5-7 from the previous section.
 
 ### Removing a package
 
-- Commit as per license section (XXX pending sheriff approval)
+1. Use `npm uninstall --save|--save-dev|--save-option`
+2. Commit and review as usual
