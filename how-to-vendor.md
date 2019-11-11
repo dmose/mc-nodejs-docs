@@ -2,18 +2,17 @@
 
 ### Vendoring in a new package
 
-- Review available packages with functionality you want, keeping in mind the
+1. Reach out to a [NodeJS module peer](XXXLINKME), and request their help on
+  choosing and landing this package.
+2. Review available packages with functionality you want, keeping in mind the
   guideliness in the [Package Selection section of the main policy
-  doc](./index#package-selection).
-  - Check that this adheres to the requirements in the [Policy Section of the main policy
-    doc](./index#policy), or talk to a reviewer about any desired exceptions.
+  doc](./index#package-selection)
+3. Work with your reviewer to select a package that meets each requirement in
+   the [Policy Section of the main policy doc](./index#policy), or that the
+   reviewer agrees should be given an exception to.
   - XXX security steps -- fill in after we get general agreement on the policies
-  - XXX license steps -- fill in after we get general agreement on the policies
-  - XXX avoid contained build system -- fill in after we get general agreement
-    on policy
-- Reach out to a NodeJS module reviewer and request approval to vendor this package
--
-- Use something like this command to install (eventually `mach vendor node` will do these steps):
+4. Reach out to a NodeJS module reviewer and request approval to vendor this package
+5. Use something like this command to install (eventually `mach vendor node` will do these steps):
 - npm install --save-exact --save-dev|---save|--save-optional --no-bin-links
   --no-optional package@version --ignore-scripts
 - Commit as per license section (XXX pending sheriff approval)
