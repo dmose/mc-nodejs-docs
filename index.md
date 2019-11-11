@@ -44,7 +44,11 @@ Current explicit non-goals of this policy include:
   The intent here is to maintain a working tree across all related commits so that VCS bisect functionality continues to work.
   </details>
 
-* All vendored node modules (and the entire dependency tree) must be licensed under acceptable licenses based on the licensing runbook.
+* All vendored node modules (and the entire dependency tree) must be licensed
+  under acceptable licenses based on the [licensing
+  runbook](https://docs.google.com/document/d/1Oguqp43W4_ChyroJ9AJAzG1jSwkUWfKvBKVvrDxVsMg/comment).
+  [XXX check with mhoye to ensure this is ok to post publicly]
+
 * Any introduction of modules including cryptographic code requires additional review from a cryptographic expert.
 * Modules including binary code will only be approved in special circumstances.
   <details><summary>Why...</summary>
