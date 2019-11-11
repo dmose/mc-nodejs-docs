@@ -1,6 +1,8 @@
 # Threat model
 
-This covers the node specific threats that have been considered as a part of this plan. It is not intended include the threats that arise from including any third-party code in Firefox.
+This covers the node specific threats that have been considered as a part of
+this plan to allow NodeJS usage in the build system. It is not intended to
+include the threats that arise from including any third-party code in Firefox.
 
 ## Packages unpublished from npm (left-pad)
 
@@ -23,4 +25,3 @@ Developers [have in the past](https://blog.npmjs.org/post/163723642530/crossenv-
 npm have introduced [new package naming rules](https://blog.npmjs.org/post/168978377570/new-package-moniker-rules) that reduce the abilitiy to register package names that are similar to other packages in certain ways however it is still possible for this to be an issue.
 
 Vendoring means we are only vulnerable when adding or upgrading packages. Reviewing the modification to `package.json` should catch instances of this happening at the top level, however, we will have top rely on security scans such as `npm audit` and `snyk` to catch this for deeper dependencies.
-
