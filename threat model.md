@@ -14,7 +14,7 @@ In addition npm have adopted a [new policy](https://www.npmjs.com/policies/unpub
 
 Node packages can provide scripts to run at install time. These scripts will be run for all dependencies of the package you are actually installing. A [previous security incident](https://blog.npmjs.org/post/175824896885/incident-report-npm-inc-operations-incident-of) used this in order to attempt to steal the npm credentials of users installing the `eslint` package.
 
-Again vendoring means that this is only an issue when adding or upgrading packages. In addition vendoring will use npm with the `--ignore-scripts` option which turns off running these scripts. For some packages this will mean installation will fail. Those cases will be reviewed more thoroughly on a case by case basis.
+Again, vendoring means that this is only an issue when adding or upgrading packages. In addition, `mach vendor node` will use npm with the `--ignore-scripts` option, which turns off running these scripts. For some packages, this will mean installation will fail. Those cases will be reviewed more thoroughly on a case by case basis.
 
 ## Packages with similar names
 
@@ -22,5 +22,5 @@ Developers [have in the past](https://blog.npmjs.org/post/163723642530/crossenv-
 
 npm have introduced [new package naming rules](https://blog.npmjs.org/post/168978377570/new-package-moniker-rules) that reduce the abilitiy to register package names that are similar to other packages in certain ways however it is still possible for this to be an issue.
 
-Vendoring means we are only vulnerable when adding or upgrading packages. Reviewing the modification to `package.json` should catch instances of this happening at the top level however we will have top rely on security scans such as `npm audit` and `snyk` do catch this for deeper dependencies.
+Vendoring means we are only vulnerable when adding or upgrading packages. Reviewing the modification to `package.json` should catch instances of this happening at the top level, however, we will have top rely on security scans such as `npm audit` and `snyk` to catch this for deeper dependencies.
 
