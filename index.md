@@ -51,8 +51,7 @@ Current explicit non-goals of this policy include:
 
 All vendored node modules (and their entire dependency tree) must be licensed
 under acceptable licenses based on the [licensing
-runbook](https://docs.google.com/document/d/1Oguqp43W4_ChyroJ9AJAzG1jSwkUWfKvBKVvrDxVsMg/comment).
-[XXX check with mhoye to ensure this is ok to post publicly]
+runbook](XXXcheck with mhoye if ok to publicly link).
 
 While not fixed requirements these are a list of things to consider when
 choosing a module to vendor:
@@ -111,7 +110,9 @@ choosing a module to vendor:
 See also https://blog.tidelift.com/how-to-choose-open-source-packages-well for
 more thoughts on this.
 
-### Vulnerability response
+### Security
+
+#### Vulnerability response
 
 When Mozilla are made aware of a vulnerability in a vendored node module either via public announcement or private disclosure it is generally expected that the team using the module in question will be responsible for determining the best solution available. The NodeJS module peers will generally act in an advisory role helping where necessary with understanding the threats presented by a vulnerability. If the feature in question is unowned, then the NodeJS peers may take a more active role in finding a solution.
 <details><summary>More about ownership...</summary>
