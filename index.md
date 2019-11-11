@@ -93,13 +93,6 @@ Current explicit non-goals of this policy include:
   could be considered.
   </details>
 
-### Vulnerability response
-
-When Mozilla are made aware of a vulnerability in a vendored node module either via public announcement or private disclosure it is generally expected that the team using the module in question will be responsible for determining the best solution available. The NodeJS module peers will generally act in an advisory role helping where necessary with understanding the threats presented by a vulnerability. If the feature in question is unowned, then the NodeJS peers may take a more active role in finding a solution.
-<details><summary>More about ownership...</summary>
-The NodeJS peers should not be considered as owning all of the vendored node module code.
-</details>
-
 ### Package selection
 While not fixed requirements these are a list of things to consider when choosing a module to vendor:
 * Size of module and dependency tree
@@ -112,6 +105,13 @@ While not fixed requirements these are a list of things to consider when choosin
 
 See also https://blog.tidelift.com/how-to-choose-open-source-packages-well for
 more thoughts on this.
+
+### Vulnerability response
+
+When Mozilla are made aware of a vulnerability in a vendored node module either via public announcement or private disclosure it is generally expected that the team using the module in question will be responsible for determining the best solution available. The NodeJS module peers will generally act in an advisory role helping where necessary with understanding the threats presented by a vulnerability. If the feature in question is unowned, then the NodeJS peers may take a more active role in finding a solution.
+<details><summary>More about ownership...</summary>
+The NodeJS peers should not be considered as owning all of the vendored node module code.
+</details>
 
 ### Automated tools
 A set of automated systems will be employed to verify that all vendored modules
