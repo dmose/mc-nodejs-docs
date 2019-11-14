@@ -6,7 +6,7 @@ details {margin-bottom: 16px;}
 
 ## NodeJS
 
-Intended to define the policy that will be followed for vendored node modules and how it will be verified.
+Defines the policy that will be followed for vendored node modules and the automated systems that will be put in place to ensure compliance.
 
 ### Non-goals
 Current explicit non-goals of this policy include:
@@ -116,7 +116,7 @@ more thoughts on this.
 
 ### Security
 
-Much of this policy has been written in a way to try and manage and mitigate general
+Much of this policy has been written in a way that tries to manage and mitigate general
 third-party vendoring security concerns.
 
 #### NPM-specific Threat-Modeling and Mitigation
