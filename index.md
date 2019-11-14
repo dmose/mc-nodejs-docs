@@ -50,7 +50,7 @@ Current explicit non-goals of this policy include:
 
 All vendored node modules (and their entire dependency tree) must be licensed
 under acceptable licenses based on the [licensing
-runbook](XXXcheck with mhoye if ok to publicly link).
+runbook](https://docs.google.com/document/d/1Oguqp43W4_ChyroJ9AJAzG1jSwkUWfKvBKVvrDxVsMg/edit).
 
 While not fixed requirements these are a list of things to consider when
 choosing a module to vendor:
