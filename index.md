@@ -40,7 +40,10 @@ Current explicit non-goals of this policy include:
 
 * Any introduction of modules including cryptographic code requires additional review from a cryptographic expert.
 
-* Any changes to the vendored node modules should be landed as a standalone changeset also containing any changes required to keep the tree building with an appropriate description describing the need and review results.
+* Any changes to the vendored node modules should be landed as a standalone
+  changeset also containing any changes required to keep the tree building with
+  an appropriate description describing the need and review results. (TODO:
+  verify with sheriffs and glob)
 
   <details><summary>Why...</summary>
   The intent here is to maintain a working tree across all related commits so that VCS bisect functionality continues to work.
