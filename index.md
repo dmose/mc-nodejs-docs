@@ -161,4 +161,4 @@ not pull code from unexpected registries).  This is intended to be used locally 
 
 * Herald rule to automatically add `nodejs-peers` as a blocking reviewer to any revisions that modify `node_modules`, `package.json` or `package-lock.json`.
 
-#### [Step-By-Step Vendoring Guide](how-to-vendor)
+#### [Step-By-Step Vendoring Guide](./how-to-vendor.md)
