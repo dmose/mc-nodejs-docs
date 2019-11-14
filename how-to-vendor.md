@@ -1,5 +1,4 @@
-# How to Vendor
-
+# Step-By-Step Vendoring Guide
 ### Vendoring in a new package
 
 1. Reach out to a [NodeJS module peer](XXXLINKME), and request their help on

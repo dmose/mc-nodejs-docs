@@ -33,7 +33,6 @@ Current explicit non-goals of this policy include:
   * Avoid developer debugging pain because we get deterministic node package versions for a given checkout or branch without having to remember to `npm install`
   * Keep CI (and local, to some degree) build resource usage down by avoiding mandatory package install step.
 
-
   </details>
 
 
@@ -144,3 +143,4 @@ not pull code from unexpected registries).  This is intended to be used locally 
 
 * Herald rule to automatically add `nodejs-peers` as a blocking reviewer to any revisions that modify `node_modules`, `package.json` or `package-lock.json`.
 
+#### [Step-By-Step Vendoring Guide](./how-to-vendor)
