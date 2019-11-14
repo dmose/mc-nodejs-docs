@@ -9,23 +9,30 @@ It is not, however, currently intended to include the threats that arise from in
 
 Previously a popular npm package was unpublished from the repository meaning that attempts to install packages that required it started failing. There are more details at the [npm blog](https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm).
 
-Our chief protection against this is that we are physcially vendoring required modules into mozilla-central. The npm repository and the packages in it are only needed what adding a new package to the tree or upgrading an existing package.
+Our chief protection against this is that we are physcially vendoring required modules into mozilla-central. The npm repository and the packages in it are only needed when adding a new package to the tree or upgrading an existing package.
 
-In addition npm have adopted a [new policy](https://www.npmjs.com/policies/unpublish) that requires working with npm support to unpublish any package that has been published for more than 72 hours.
+In addition, npm have adopted a [new policy](https://www.npmjs.com/policies/unpublish) that requires working with npm support to unpublish any package that has been published for more than 72 hours.
 
 ## Packages that execute scripts on install
 
 Node packages can provide scripts to run at install time. These scripts will be run for all dependencies of the package you are actually installing. A [previous security incident](https://blog.npmjs.org/post/175824896885/incident-report-npm-inc-operations-incident-of) used this in order to attempt to steal the npm credentials of users installing the `eslint` package.
 
-Again, vendoring means that this is only an issue when adding or upgrading packages. In addition, `mach vendor node` will use npm with the `--ignore-scripts` option, which turns off running these scripts. For some packages, this will mean installation will fail. Those cases will be reviewed more thoroughly on a case by case basis.
+Again, vendoring means that this is only an issue when adding or upgrading
+packages. In addition, `mach vendor node` will use npm with the
+`--ignore-scripts` option, which turns off running these scripts. For some
+packages, this will mean installation will fail. Those cases will be reviewed
+on a case by case basis.
 
 ## Packages with similar names
 
-Developers [have in the past](https://blog.npmjs.org/post/163723642530/crossenv-malware-on-the-npm-registry) registered malicious packages with names very similar to popular npm packages. This can lead to accidentally adding a dependency on a malicious package rather than the expected package.
+Developers have, in the past, [registered malicious packages with names very similar to popular npm packages](https://blog.npmjs.org/post/163723642530/crossenv-malware-on-the-npm-registry). This can lead to accidentally adding a dependency on a malicious package rather than the expected package.
 
-npm have introduced [new package naming rules](https://blog.npmjs.org/post/168978377570/new-package-moniker-rules) that reduce the abilitiy to register package names that are similar to other packages in certain ways however it is still possible for this to be an issue.
+npm, Inc have introduced [new package naming rules](https://blog.npmjs.org/post/168978377570/new-package-moniker-rules) that
+reduce the abilitiy to register package names that are similar to other
+packages in certain ways.  However, it is still possible for this to be an
+issue.
 
-Vendoring means we are only vulnerable when adding or upgrading packages. Reviewing the modification to `package.json` should catch instances of this happening at the top level, however, we will have top rely on security scans such as `npm audit` and `snyk` to catch this for deeper dependencies.
+Vendoring means we are only vulnerable when adding or upgrading packages. Reviewing the modifications to `package.json` should catch instances of this happening at the top level, however, we will have top rely on security scans such as `npm audit` and `snyk` to catch this for deeper dependencies.
 
 # General vendoring threats, with some npm/NodeJS-specific commentary
 
@@ -33,7 +40,7 @@ Vendoring means we are only vulnerable when adding or upgrading packages. Review
 
 npm packages often have a substantially larger dependency set than packages in
 other ecosystems, but this varies greatly.  As an example, there are a variety
-of JavaScript bundlers in the ecosystem.  rollup, is specifically focussed on ES
+of JavaScript bundlers in the ecosystem.  rollup is specifically focussed on ES
 modules; webpack is more of Swiss army knife.  As of this writing, rollup has 3
 total dependencies, while webpack has 304.  
 
@@ -45,14 +52,14 @@ Other possible mitigations include:
 
 ### Setting limits on the number of dependencies allowed for a given package
 
-Whether this is worth it, on balance, needs to be discussed further.
+Whether this is worth it needs to be discussed further.
 
 [TODO(nodejs-peers & sec folks): need to decide before signoff].
 
 ### Encourage or enforce a waiting period after release and before vendoring
 
-The rationale is we don't necessarily need to be the first to use most
-upgrades, and that gives time for at least some subset of flaws or malice to
+The rationale is that we don't necessarily need to be the first to use most
+upgrades.  That gives time for at least some subset of flaws or malice to
 surface before we start using it.  Obviously, exceptions would need
 to be made for (for example), known security fixes.
 
@@ -60,16 +67,15 @@ to be made for (for example), known security fixes.
 
 ### Sandbox the builds
 
-There is nothing npm-specific about this, but it's [talked about for a little while](https://bugzilla.mozilla.org/show_bug.cgi?id=1510416),
+There is nothing npm-specific about this, but it's [been talked about for a little while](https://bugzilla.mozilla.org/show_bug.cgi?id=1510416),
 and would definitely help.
 
-It would prevent at least a couple classes of attacks: writing to other parts
-of the developers' system, and exfiltrating developer data (e.g. ssh keys or
+It would prevent at least two classes of attacks: writing to other parts
+of the developers' system, and exfiltrating developer data (e.g. `ssh` keys or
 bitcoins).  It would likely make remediation of many attacks easier as well.
 
-We should consider a possibility of resourcing this as a project, but it's
+We should consider the possibility of resourcing this as a project, but it's
 probably a big enough piece that we don't want it to block improving our
-existing NodeJS infrastructure.  Which is to say that NodeJS is already
+existing NodeJS infrastructure.  Which is to say that NodeJS/npm is already
 informally in use in various parts of the tree, and this project should help
 make it more auditable and manageable.
-
