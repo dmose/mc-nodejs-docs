@@ -111,6 +111,15 @@ more thoughts on this.
 
 ### Security
 
+Much of this policy has been written in a way to try and manage general
+third-party vendoring security concerns.
+
+#### NPM-specific Threat-Modeling and Mitigation
+
+There are some concerns that are either specific to npm/NodeJSpackages or have
+been mitigated in npm/NodeJS-specific ways, and those are discussed on the
+[threat-model page](./threat-model.md).
+
 #### Vulnerability response
 
 When Mozilla are made aware of a vulnerability in a vendored node module either via public announcement or private disclosure it is generally expected that the team using the module in question will be responsible for determining the best solution available. The NodeJS module peers will generally act in an advisory role helping where necessary with understanding the threats presented by a vulnerability. If the feature in question is unowned, then the NodeJS peers may take a more active role in finding a solution.

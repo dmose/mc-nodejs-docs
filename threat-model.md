@@ -1,8 +1,9 @@
-# Threat model
+# NPM/NodeJS-Specific Threat Modelling and Mitigation
 
-This covers the node specific threats that have been considered as a part of
-this plan to allow NodeJS usage in the build system. It is not intended to
-include the threats that arise from including any third-party code in Firefox.
+This covers the NodeJS specific threats that have been considered as a part of
+this plan to allow NodeJS usage in the build system.  It also includes some
+npm/NodeJS-specific mitigations to more general vendoring concerns.
+It is not, however, currently intended to include the threats that arise from including any third-party code in Firefox.
 
 ## Packages unpublished from npm (left-pad)
 
