@@ -52,7 +52,7 @@ All vendored node modules (and their entire dependency tree) must be licensed
 under acceptable licenses based on the [licensing
 runbook](https://docs.google.com/document/d/1Oguqp43W4_ChyroJ9AJAzG1jSwkUWfKvBKVvrDxVsMg/edit).
 
-While not fixed requirements these are a list of things to consider when
+While not fixed requirements, these are a list of things to consider when
 choosing a module to vendor:
 
 * Size of module and dependency tree
@@ -113,18 +113,25 @@ more thoughts on this.
 
 ### Security
 
-Much of this policy has been written in a way to try and manage general
+Much of this policy has been written in a way to try and manage and mitigate general
 third-party vendoring security concerns.
 
 #### NPM-specific Threat-Modeling and Mitigation
 
-There are some concerns that are either specific to npm/NodeJSpackages or have
+There are some concerns that are either specific to npm/NodeJS packages or have
 been mitigated in npm/NodeJS-specific ways, and those are discussed on the
 [threat-model page](./threat-model.md).
 
 #### Vulnerability response
 
-When Mozilla are made aware of a vulnerability in a vendored node module either via public announcement or private disclosure it is generally expected that the team using the module in question will be responsible for determining the best solution available. The NodeJS module peers will generally act in an advisory role helping where necessary with understanding the threats presented by a vulnerability. If the feature in question is unowned, then the NodeJS peers may take a more active role in finding a solution.
+When Mozilla are made aware of a vulnerability in a vendored node module either
+via public announcement or private disclosure, it is generally expected that
+the team using the module in question will be responsible for determining the
+best solution available. The NodeJS module peers will generally act in an
+advisory role with understanding the threats presented by a vulnerability
+(where necessary). If the feature in question is unowned, then the NodeJS
+peers may take a more active role in finding a solution.
+
 <details><summary>More about ownership...</summary>
 The NodeJS peers should not be considered as owning all of the vendored node module code.
 </details>
@@ -140,8 +147,8 @@ not pull code from unexpected registries).  This is intended to be used locally 
 
     <details><summary>Details...</summary>
 
-    There are likely to be slight different options for CI use (e.g. we may additionally
-    do checks that require online resources or accounts, such as snyk, and we
+    There are likely to be slightly different options for CI use (e.g. we may additionally
+    do checks that require online resources or accounts, such as `snyk`, and we
     don't want to unnecessarily burden local developers).
     </details>
 
@@ -154,4 +161,4 @@ not pull code from unexpected registries).  This is intended to be used locally 
 
 * Herald rule to automatically add `nodejs-peers` as a blocking reviewer to any revisions that modify `node_modules`, `package.json` or `package-lock.json`.
 
-#### [Step-By-Step Vendoring Guide](./how-to-vendor)
+#### [Step-By-Step Vendoring Guide](how-to-vendor)
