@@ -89,7 +89,9 @@ choosing a module to vendor:
   > can revisit this, I reckon.
   </details>
 
-* Avoid importing tools with their own build-systems that don’t expose their build Directed Acyclic Graphs (i.e. the graph of all dependencies from inputs to outputs).
+* Avoid importing tools with their own build-systems that don’t expose their
+  build Directed Acyclic Graphs (i.e. the graph of all dependencies from inputs
+  to outputs). (TODO: link to mechanism/people to run questions by)
 
   <details><summary>Details...</summary>
 
