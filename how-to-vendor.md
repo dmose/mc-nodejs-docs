@@ -18,7 +18,7 @@
      * run `mach node lint`, which will:
        * run a license linter locally (until implemented, see http://npm.broofa.com/)
        * run `npm audit`
-       * run `lockfile-lint`
+       * run [`lockfile-lint`](https://snyk.io/blog/why-npm-lockfiles-can-be-a-security-blindspot-for-injecting-malicious-modules/)
 
    </details>
 5. Review the generated patch to be sure it looks like you would expect.
