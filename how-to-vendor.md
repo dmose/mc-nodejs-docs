@@ -1,12 +1,12 @@
 # Step-By-Step Vendoring Guide
 ### Vendoring in a new package
 
-1. Reach out to a [NodeJS module peer](XXXLINKME), and request their help on
+1. Reach out to a [NodeJS module peer](XXXLINKME), and request their help with
   choosing and landing this package.
 2. Review available packages with functionality you want, keeping in mind the
   guideliness in the [Package Selection section of the main policy
   doc](./index#package-selection).
-3. Work with your reviewer to select a package to select the best package
+3. Work with your reviewer to select the best package
 4. Use `mach vendor node install` to vendor in the package (this will handle
    installing with the correct `npm` options and validating security and
    license invariants).
@@ -22,7 +22,7 @@
    </details>
 5. Review the generated patch to be sure it looks like you would expect.
 6. Commit as per the General Policy section.
-7. Upload your patch to Phabrictor and request review.
+7. Upload your patch to Phabricator and request review.
 
 ### Updating an existing package
 
