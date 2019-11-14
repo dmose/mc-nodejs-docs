@@ -13,7 +13,7 @@
    <details><summary>Details</summary>
 
     To be implemented in `mach vendor node install`:
-     * ```npm install --save-exact --save-dev|---save|--save-optional --no-bin-links --no-optional package@version --ignore-scripts```
+     * ```npm install --save-exact --save-dev --no-bin-links --no-optional package@version --ignore-scripts```
      * run `mach node lint`, which will:
        * run a license linter locally (until implemented, see http://npm.broofa.com/)
        * run `npm audit`
@@ -35,5 +35,5 @@
 
 ### Removing a package
 
-1. Use `npm uninstall --save|--save-dev|--save-option`
+1. Use `npm uninstall --save-dev`
 2. Commit and review as usual
