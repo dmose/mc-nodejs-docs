@@ -1,12 +1,17 @@
-<!-- Make sure `details` spacing looks ok when converted by `mach doc` -->
-<style 
-  type="text/css">
-details {margin-bottom: 16px;}
+This is here to make sure things look reasonable when converted by `mach doc`:
+<style type="text/css">
+  details {margin-bottom: 16px;}
 </style>
 
 ## NodeJS
 
 Intended to define the policy that will be followed for vendored node modules and how it will be verified.
+
+These docs will ultimately live in mozilla-central and be discoverable/rendered
+in firefox-source-docs; they're just living here for convenience right now.
+For any issues you discover, please file an issue or PR on Github.  If it's
+helpful, you can also give me feedback directly by
+reaching out to me in #nodejs on Slack or [email](mailto:dmosedale@mozilla.com).
 
 ### Non-goals
 Current explicit non-goals of this policy include:
