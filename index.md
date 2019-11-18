@@ -148,7 +148,7 @@ The NodeJS peers should not be considered as owning all of the vendored node mod
 A set of automated systems will be employed to verify that all vendored modules
 continue to meet the policy.
 
-* `mach lint node`: Runs checks that no modules or dependencies use a disallowed license
+* `mach lint node`: Runs checks to ensure that no modules or dependencies use a disallowed license
 or have known security vulnerabilities.  Verifies that `package-lock.json` is valid (does
 not pull code from unexpected registries).  This is intended to be used locally (by
 `mach vendor node`), as well periodically on CI (to maintain the invariants).
