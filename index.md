@@ -22,7 +22,6 @@ vendored-in packages that:
 
 * are auditable for known security issues and license policy compliance
 * can easily be manually audited or made a part of a Continuous Integration process
-  license policy compliance using Continuous Integration
 * are easily maintained (added, updated, or removed) with clear
   documentation of necessary steps
 * have defined security threat-modelling, mitigations, and vulnerability
