@@ -20,7 +20,8 @@ Make the use of NodeJS/npm packages in the top-level package.json
 package.json well-managed using policies that will result in a set of
 vendored-in packages that:
 
-* are easily auditable and regularly audited for known security issues and
+* are auditable for known security issues and license policy compliance
+* can easily be manually audited or made a part of a Continuous Integration process
   license policy compliance using Continuous Integration
 * are easily maintained (added, updated, or removed) with clear
   documentation of necessary steps
