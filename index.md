@@ -13,6 +13,21 @@ For any issues you discover, please file an issue or PR on Github.  If it's
 helpful, you can also give me feedback directly by
 reaching out to me in #nodejs on Slack or [email](mailto:dmosedale@mozilla.com).
 
+### Goals
+Current goals of this policy include:
+
+Make the use of NodeJS/npm packages in the top-level package.json
+package.json well-managed using policies that will result in a set of
+vendored-in packages that:
+
+* are easily auditable and regularly audited for known security issues and
+  license policy compliance using Continuous Integration
+* are easily maintained (added, updated, or removed) with clear
+  documentation of necessary steps
+* have defined security threat-modelling, mitigations, and vulnerability
+  handling
+* have clear guidelines about package selection and review
+
 ### Non-goals
 Current explicit non-goals of this policy include:
 
