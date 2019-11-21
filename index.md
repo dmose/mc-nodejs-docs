@@ -17,8 +17,7 @@ reaching out to me in #nodejs on Slack or [email](mailto:dmosedale@mozilla.com).
 Current goals of this policy include:
 
 Make the use of NodeJS/npm packages in the top-level package.json
-package.json well-managed using policies that will result in a set of
-vendored-in packages that:
+well-managed using policies that will result in a set of vendored-in packages that:
 
 * are auditable for known security issues and license policy compliance
 * can easily be manually audited or made a part of a Continuous Integration process
