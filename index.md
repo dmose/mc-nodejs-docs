@@ -10,8 +10,8 @@ Intended to define the policy that will be followed for vendored node modules an
 These docs will ultimately live in mozilla-central and be discoverable/rendered
 in firefox-source-docs; they're just living here for convenience right now.
 For any issues you discover, please file an issue or PR on Github.  If it's
-helpful, you can also give me feedback directly by
-reaching out to me in #nodejs on Slack or [email](mailto:dmosedale@mozilla.com).
+helpful, you can also give me directly by reaching out to me in #nodejs on
+Slack or [email](mailto:nodejs-peers@mozilla.org).
 
 ### Non-goals
 Current explicit non-goals of this policy include:
