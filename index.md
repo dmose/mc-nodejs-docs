@@ -5,7 +5,7 @@ This is here to make sure things look reasonable when converted by `mach doc`:
 
 ## NodeJS
 
-Intended to define the policy that will be followed for vendored node modules and how it will be verified.
+Defines the policy that will be followed for vendored node modules and the automated systems that will be put in place to ensure compliance.
 
 These docs will ultimately live in mozilla-central and be discoverable/rendered
 in firefox-source-docs; they're just living here for convenience right now.
@@ -121,7 +121,7 @@ more thoughts on this.
 
 ### Security
 
-Much of this policy has been written in a way to try and manage and mitigate general
+Much of this policy has been written in a way that tries to manage and mitigate general
 third-party vendoring security concerns.
 
 #### NPM-specific Threat-Modeling and Mitigation
