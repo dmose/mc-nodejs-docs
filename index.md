@@ -18,6 +18,8 @@ Current explicit non-goals of this policy include:
 
 * Full code review of all modules added to node_modules in mozilla-central.
 * Covering node usage in repositories outside of mozilla-central and the integration branches, even if they may be used to generate artifacts that eventually land in mozilla-central.
+* Covering package.json and NodeJS-related use outside of the top-level
+  node_modules tree in mozilla-central.
 
 ### General Policy
 * Node modules may only be used at build time or before (e.g. automated scripts and linting tools).
