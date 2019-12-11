@@ -19,7 +19,7 @@ Current goals of this policy include:
 Make the use of NodeJS/npm packages in the top-level package.json
 well-managed using policies that will result in a set of vendored-in packages that:
 
-* are auditable for known security issues and license policy compliance
+* are programmatically auditable for known security issues and license policy compliance
 * can easily be manually audited or made a part of a Continuous Integration process
 * are easily maintained (added, updated, or removed) with clear
   documentation of necessary steps
@@ -75,6 +75,8 @@ Current explicit non-goals of this policy include:
 All vendored node modules (and their entire dependency tree) must be licensed
 under acceptable licenses based on the [licensing
 runbook](https://docs.google.com/document/d/1Oguqp43W4_ChyroJ9AJAzG1jSwkUWfKvBKVvrDxVsMg/edit).
+A package *cannot* be included in-tree if the license information of the package or any of its dependencies
+is not programmatically accessible (i.e., included in `package.json`.)
 
 While not fixed requirements, these are a list of things to consider when
 choosing a module to vendor:
