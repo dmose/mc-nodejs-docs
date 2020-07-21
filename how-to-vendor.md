@@ -14,7 +14,7 @@
 
     To be implemented in `mach vendor node install`:
      * ```npm install --save-exact --save-dev --no-bin-links --no-optional package@version --ignore-scripts```
-     * run `mach node lint`, which will:
+     * run `mach lint node`, which will:
        * run a license linter locally (until implemented, see http://npm.broofa.com/)
        * run `npm audit`
        * run [`lockfile-lint`](https://snyk.io/blog/why-npm-lockfiles-can-be-a-security-blindspot-for-injecting-malicious-modules/)
