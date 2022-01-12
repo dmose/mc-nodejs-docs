@@ -5,7 +5,7 @@
   choosing and landing this package.
 2. Review available packages with functionality you want, keeping in mind the
   guideliness in the [Package Selection section of the main policy
-  doc](./index#package-selection).
+  doc](./index.md#package-selection).
 3. Work with your reviewer to select the best package
 4. Use `mach vendor node install` to vendor in the package (this will handle
    installing with the correct `npm` options and validating security and
